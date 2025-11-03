@@ -115,10 +115,19 @@ export default function Page() {
                 </Link>
               </div>
 
-              {/* Dashboard placeholder */}
-              <div className="mt-12 px-2">
-                <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 h-[400px] flex items-center justify-center">
-                  <p className="text-muted-foreground text-sm">Dashboard placeholder - Coming soon</p>
+              {/* Dashboard Video */}
+              <div className="mt-12 -mx-8 md:-mx-10">
+                <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 w-full">
+                  <video
+                    className="w-full h-auto"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    key="answer-engine-analytics-v2"
+                  >
+                    <source src="/answer-engine-analytics.webm?v=2" type="video/webm" />
+                  </video>
                 </div>
               </div>
             </div>
@@ -208,10 +217,19 @@ export default function Page() {
                 </Link>
               </div>
 
-              {/* Dashboard placeholder */}
-              <div className="mt-12 px-2">
-                <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 h-[400px] flex items-center justify-center">
-                  <p className="text-muted-foreground text-sm">Dashboard placeholder - Coming soon</p>
+              {/* Dashboard Video */}
+              <div className="mt-12 -mx-8 md:-mx-10">
+                <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 w-full">
+                  <video
+                    className="w-full h-auto"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    key="traffic-analytics-v2"
+                  >
+                    <source src="/traffic-analytics.webm?v=2" type="video/webm" />
+                  </video>
                 </div>
               </div>
             </div>
@@ -298,10 +316,19 @@ export default function Page() {
                 </Link>
               </div>
 
-              {/* Dashboard placeholder */}
-              <div className="mt-12 px-2">
-                <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 h-[400px] flex items-center justify-center">
-                  <p className="text-muted-foreground text-sm">Dashboard placeholder - Coming soon</p>
+              {/* Dashboard Video */}
+              <div className="mt-12 -mx-8 md:-mx-10">
+                <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 w-full">
+                  <video
+                    className="w-full h-auto"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    key="actionables-v2"
+                  >
+                    <source src="/actionables.webm?v=2" type="video/webm" />
+                  </video>
                 </div>
               </div>
             </div>

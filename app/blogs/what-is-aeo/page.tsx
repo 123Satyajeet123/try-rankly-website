@@ -1,8 +1,27 @@
+import type { Metadata } from "next"
 import { SiteHeader } from "@/components/site-header"
 import { RanklyFooter } from "@/components/rankly-footer"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { ProductDemoSection } from "@/components/product-demo-section"
 import { FAQSection2 } from "@/components/ui/faq-section-2"
+
+export const metadata: Metadata = {
+  title: "What is AEO? Why Generative Engine Optimization is the New SEO",
+  description: "Understand how Answer Engine Optimization is reshaping digital visibility. From citations to sentiment, discover why ranking in AI Answer Engines matters more than ever.",
+  openGraph: {
+    title: "What is AEO? Why Generative Engine Optimization is the New SEO",
+    description: "Understand how Answer Engine Optimization is reshaping digital visibility. From citations to sentiment, discover why ranking in AI Answer Engines matters more than ever.",
+    type: "article",
+    publishedTime: "2024-12-15",
+    authors: ["Rankly"],
+    tags: ["AEO", "Answer Engine Optimization", "SEO", "AI", "Generative AI"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "What is AEO? Why Generative Engine Optimization is the New SEO",
+    description: "Understand how Answer Engine Optimization is reshaping digital visibility.",
+  },
+}
 
 export default function BlogPostPage() {
   return (

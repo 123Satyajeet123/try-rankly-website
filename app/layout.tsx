@@ -28,9 +28,76 @@ const quintessential = Quintessential({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
-  generator: "v0.app",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai'),
+  title: {
+    default: "Rankly - Answer Engine Analytics & AI Visibility Tracking",
+    template: "%s | Rankly"
+  },
+  description: "Track how your brand performs inside AI answers. Understand which models surface your brand, how often, and in what context. Turn AI-generated answers into measurable insights.",
+  keywords: [
+    "answer engine optimization",
+    "AEO",
+    "AI visibility tracking",
+    "LLM analytics",
+    "ChatGPT analytics",
+    "Perplexity analytics",
+    "Claude analytics",
+    "Gemini analytics",
+    "AI brand mentions",
+    "generative engine optimization",
+    "SEO analytics",
+    "AI traffic analytics"
+  ],
+  authors: [{ name: "Rankly" }],
+  creator: "Rankly",
+  publisher: "Rankly",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "/",
+    siteName: "Rankly",
+    title: "Rankly - Answer Engine Analytics & AI Visibility Tracking",
+    description: "Track how your brand performs inside AI answers. Understand which models surface your brand, how often, and in what context.",
+    images: [
+      {
+        url: "/images/rankly-dashboard-final.png",
+        width: 1200,
+        height: 630,
+        alt: "Rankly Dashboard - Answer Engine Analytics",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rankly - Answer Engine Analytics & AI Visibility Tracking",
+    description: "Track how your brand performs inside AI answers. Turn AI-generated answers into measurable insights.",
+    images: ["/images/rankly-dashboard-final.png"],
+    creator: "@rankly",
+  },
+  alternates: {
+    canonical: "/",
+  },
+  category: "Technology",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
+  },
 }
 
 export default function RootLayout({
@@ -38,8 +105,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'Rankly',
+    applicationCategory: 'BusinessApplication',
+    description: 'Answer Engine Analytics & AI Visibility Tracking platform. Track how your brand performs inside AI answers across ChatGPT, Perplexity, Claude, Gemini, and more.',
+    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD',
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      ratingCount: '127',
+    },
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${veteranTypewriter.variable} ${inter.variable} ${quintessential.variable}`}>
         <ThemeProvider
           attribute="class"

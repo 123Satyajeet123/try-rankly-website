@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Disallow demo pages from being indexed
+Disallow: /color-picker-demo
+Disallow: /framer-demo
+Disallow: /shadcndesign-demo
+Disallow: /grid-dashboard
+Disallow: /grid-homepage
+Disallow: /grid-resources
+
+Sitemap: https://rankly.ai/sitemap.xml
+
