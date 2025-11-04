@@ -2,7 +2,6 @@
 
 import { SiteHeader } from "@/components/site-header"
 import { HeroHeader } from "@/components/hero-header"
-import { HeroGraphic } from "@/components/hero-graphic"
 import { HeroCards } from "@/components/hero-cards"
 import { FeatureBlocks } from "@/components/ui/feature-blocks"
 import { ProductDemoSection } from "@/components/product-demo-section"
@@ -33,8 +32,21 @@ export default function AnswerEngineAnalyticsPage() {
             {/* 1. Hero Header - Title and Description */}
             <HeroHeader />
             
-            {/* 2. Hero Graphic - Radar Visual */}
-            <HeroGraphic />
+            {/* 2. Hero Video - Answer Engine Analytics Demo */}
+            <div className="mt-12 -mx-8 md:-mx-10">
+              <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 w-full">
+                <video
+                  className="w-full h-auto"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  key="answer-engine-analytics-v2"
+                >
+                  <source src="/answer-engine-analytics.webm?v=2" type="video/webm" />
+                </video>
+              </div>
+            </div>
           </div>
           
           {/* 3. Hero Cards - 4 Feature Cards with Grid Rulers (breaks out of container to match homepage) */}

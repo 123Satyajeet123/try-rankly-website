@@ -5,7 +5,6 @@ import { motion } from "motion/react"
 import * as d3 from "d3"
 import { Chart } from "react-google-charts"
 import { SiteHeader } from "@/components/site-header"
-import { HeroGraphic } from "@/components/hero-graphic"
 import { HeroCards } from "@/components/hero-cards"
 import { Icon } from "@iconify/react"
 import { FeatureBlocks } from "@/components/ui/feature-blocks"
@@ -1115,8 +1114,21 @@ export default function TrafficAnalyticsPage() {
             {/* 1. Hero Header - Title and Description */}
             <TrafficHeroHeader />
             
-            {/* 2. Hero Graphic - Radar Visual */}
-            <HeroGraphic />
+            {/* 2. Hero Video - Traffic Analytics Demo */}
+            <div className="mt-12 -mx-8 md:-mx-10">
+              <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 w-full">
+                <video
+                  className="w-full h-auto"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  key="traffic-analytics-v2"
+                >
+                  <source src="/traffic-analytics.webm?v=2" type="video/webm" />
+                </video>
+              </div>
+            </div>
             
           </div>
           

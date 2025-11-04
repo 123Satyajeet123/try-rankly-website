@@ -150,19 +150,6 @@ function ActionablesHeroHeader() {
   )
 }
 
-function ActionablesHeroGraphic() {
-  return (
-    <div className="mb-12">
-      <div className="aspect-[4/3] bg-muted/30 rounded-xl overflow-hidden flex items-center justify-center">
-        <div className="text-center">
-          <div className="text-6xl mb-4">📊</div>
-          <p className="text-muted-foreground text-lg">Placeholder Hero Graphic</p>
-          <p className="text-muted-foreground text-sm">Action flow visualization will go here</p>
-        </div>
-      </div>
-    </div>
-  )
-}
 
 function ActionablesHeroCards() {
   const items = [
@@ -1158,8 +1145,21 @@ export default function ActionablesPage() {
             {/* Actionables Hero Header */}
             <ActionablesHeroHeader />
             
-            {/* Actionables Hero Graphic */}
-            <ActionablesHeroGraphic />
+            {/* Actionables Hero Video */}
+            <div className="mt-12 -mx-8 md:-mx-10">
+              <div className="relative rounded-xl overflow-hidden bg-muted/20 border border-border/50 w-full">
+                <video
+                  className="w-full h-auto"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  key="actionables-v2"
+                >
+                  <source src="/actionables.webm?v=2" type="video/webm" />
+                </video>
+              </div>
+            </div>
             
           </div>
           
