@@ -7,6 +7,7 @@ import { LotusLogo } from "@/components/lotus-logo"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { ProductDemoSection } from "@/components/product-demo-section"
 import { FAQSection2 } from "@/components/ui/faq-section-2"
+import { ThemeToggle } from "@/components/theme-toggle"
  
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
@@ -20,31 +21,19 @@ export default function ResourcesPage() {
   const blogs = [
     {
       id: 1,
-      title: "How AI is Transforming Frontend Development",
-      description: "Explore how tools like GitHub Copilot, AI design generators, and code assistants are changing the way developers build UIs and ship features faster.",
-      href: "#",
-      date: new Date("2024-12-15"), // 15 December
-    },
-    {
-      id: 2,
       title: "What is AEO? Why Generative Engine Optimization is the New SEO",
       description: "Understand how Answer Engine Optimization is reshaping digital visibility across AI answer engines.",
       href: "/blogs/what-is-aeo",
-      date: new Date("2024-11-20"), // 20 November
+      date: new Date("2024-11-05"), // 5 November
+      category: "Insights",
     },
     {
-      id: 3,
-      title: "5 VS Code Extensions That Will Save You Hours",
-      description: "Discover must-have extensions to boost your coding efficiency and streamline your workflow.",
-      href: "#",
-      date: new Date("2024-10-10"), // 10 October
-    },
-    {
-      id: 4,
-      title: "Time Management for Developers: What Really Works",
-      description: "Learn proven strategies to avoid burnout and stay on top of your tasks without stress.",
-      href: "#",
-      date: new Date("2024-09-05"), // 5 September
+      id: 2,
+      title: "Inside Generative Engines: A Mathematical and System-Level Breakdown",
+      description: "A deep dive into the mathematical foundations and system architecture that power modern generative AI engines.",
+      href: "/blogs/inside-generative-engines",
+      date: new Date("2024-10-25"), // 25 October
+      category: "Technical",
     },
   ]
 
@@ -77,10 +66,10 @@ export default function ResourcesPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Left Column - Main Content */}
             <div className="space-y-6">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
                 Blogs
               </h1>
-              <p className="text-lg text-muted-foreground">
+              <p className="text-base text-muted-foreground">
                 Data-backed perspectives, written to engage curious minds and decision-makers alike.
               </p>
 
@@ -144,24 +133,27 @@ export default function ResourcesPage() {
             <div className="rounded-xl border border-border bg-card text-card-foreground overflow-hidden">
               {/* Split: top graphic, bottom content */}
               <div className="flex flex-col">
-                <div className="relative h-56 flex items-center justify-center overflow-hidden">
+                <div className="relative h-56 flex items-center justify-center overflow-hidden bg-gradient-to-br from-cyan-100 via-orange-50 to-cyan-100 dark:from-cyan-900/20 dark:via-orange-900/20 dark:to-cyan-900/20">
                   {/* Full-width Flickering Grid background */}
                   <FlickeringGrid
                     className="absolute inset-0 z-0"
                     squareSize={4}
                     gridGap={6}
-                    color="rgb(100, 100, 100)"
-                    maxOpacity={0.25}
-                    flickerChance={0.2}
+                    color="rgb(150, 150, 150)"
+                    maxOpacity={0.35}
+                    flickerChance={0.3}
                   />
                 </div>
                 <div className="px-6 py-6 border-t border-white/10">
-                  <div className="flex items-center gap-2 mb-3">
+                  <div className="flex items-center gap-4 mb-3">
+                    <span className="px-3 py-1.5 bg-muted dark:bg-muted/90 rounded-full text-xs font-medium uppercase tracking-wider text-foreground dark:text-foreground border border-border/80 dark:border-white/30">
+                      {latestBlog.category}
+                    </span>
                     <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                       {formatDate(latestBlog.date)}
                     </span>
                   </div>
-                  <h3 className="text-xl font-bold mb-4">
+                  <h3 className="text-base font-bold mb-4 leading-tight">
                     {latestBlog.title}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-6">
@@ -181,38 +173,41 @@ export default function ResourcesPage() {
       <section className="py-16 px-6">
         <div className="mx-auto max-w-7xl relative px-6 md:px-8">
           
-          <h2 className="text-3xl font-bold mb-8">All Blogs</h2>
+          <h2 className="text-2xl font-bold mb-8">All Blogs</h2>
           
           {/* Filters removed per request */}
 
           {/* Reports Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherBlogs.map((blog) => (
-              <Card key={blog.id} className="group hover:shadow-lg transition-shadow h-full flex flex-col">
+              <Card key={blog.id} className="group hover:shadow-lg transition-shadow h-full flex flex-col overflow-hidden">
+                <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-cyan-100 via-orange-50 to-cyan-100 dark:from-cyan-900/20 dark:via-orange-900/20 dark:to-cyan-900/20">
+                  <FlickeringGrid
+                    className="absolute inset-0"
+                    squareSize={4}
+                    gridGap={6}
+                    color="rgb(150, 150, 150)"
+                    maxOpacity={0.35}
+                    flickerChance={0.3}
+                  />
+                </div>
                 <CardHeader>
-                  <div className="relative w-16 h-16 rounded-lg overflow-hidden mb-4 bg-black">
-                    <FlickeringGrid
-                      className="absolute inset-0"
-                      squareSize={4}
-                      gridGap={6}
-                      color="rgb(100,100,100)"
-                      maxOpacity={0.2}
-                      flickerChance={0.15}
-                    />
-                  </div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
                       {formatDate(blog.date)}
                     </span>
                   </div>
-                  <CardTitle className="text-lg font-bold">
+                  <CardTitle className="text-sm font-bold leading-tight">
                     {blog.title}
                   </CardTitle>
                   <CardDescription>
                     {blog.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="pt-2 mt-auto flex justify-end">
+                <CardContent className="pt-2 mt-auto flex items-center justify-between">
+                  <span className="px-2 py-1 bg-muted dark:bg-muted/90 rounded-full text-[10px] font-medium uppercase tracking-wider text-foreground dark:text-foreground border border-border/80 dark:border-white/30">
+                    {blog.category}
+                  </span>
                   <Button asChild variant="outline" className="w-auto px-4 bg-transparent hover:bg-transparent">
                     <Link href={blog.href} className="no-underline">Read more →</Link>
                   </Button>
@@ -231,6 +226,11 @@ export default function ResourcesPage() {
       <FAQSection2 />
 
       <RanklyFooter />
+
+      {/* Theme Toggle at bottom */}
+      <div className="fixed bottom-6 right-6 z-50">
+        <ThemeToggle />
+      </div>
     </main>
   )
 }
