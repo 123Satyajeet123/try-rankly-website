@@ -288,6 +288,15 @@ html {
   a { @apply underline-offset-4 hover:underline; }
 
   button, .btn, [role="button"] { @apply font-medium tracking-tight; }
+
+  /* Disable hyphenation in blog articles */
+  .prose-article {
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
 }
 
 /* Global container width override: set 7xl container to 1260px */
