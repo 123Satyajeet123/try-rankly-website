@@ -5,7 +5,11 @@ import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { ProductDemoSection } from "@/components/product-demo-section"
 import { FAQSection2 } from "@/components/ui/faq-section-2"
 import { MarkdownButton } from "@/components/markdown-button"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { LinkIcon } from "lucide-react"
+
+// Force dynamic rendering to avoid build timeout
+export const dynamic = 'force-dynamic'
 
 export const metadata: Metadata = {
   title: "What is AEO? Why Generative Engine Optimization is the New SEO",
