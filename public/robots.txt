@@ -9,5 +9,24 @@ Disallow: /grid-dashboard
 Disallow: /grid-homepage
 Disallow: /grid-resources
 
+# Allow AI crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://rankly.ai/sitemap.xml
 

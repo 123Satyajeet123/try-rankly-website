@@ -105,13 +105,15 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const jsonLd = {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai'
+  
+  const softwareApplicationJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'SoftwareApplication',
     name: 'Rankly',
     applicationCategory: 'BusinessApplication',
     description: 'Answer Engine Analytics & AI Visibility Tracking platform. Track how your brand performs inside AI answers across ChatGPT, Perplexity, Claude, Gemini, and more.',
-    url: process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai',
+    url: baseUrl,
     offers: {
       '@type': 'Offer',
       price: '0',
@@ -124,12 +126,33 @@ export default function RootLayout({
     },
   }
 
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Rankly',
+    url: baseUrl,
+    logo: `${baseUrl}/favicon.svg`,
+    description: 'Answer Engine Optimization (AEO) platform that helps businesses track and improve their visibility in AI-powered search engines.',
+    sameAs: [
+      'https://twitter.com/rankly',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Support',
+      url: 'https://cal.com/sj-rankly/30min',
+    },
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApplicationJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
       </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${veteranTypewriter.variable} ${inter.variable} ${quintessential.variable}`}>

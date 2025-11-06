@@ -1,9 +1,9 @@
 "use client";
 
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { useEffect } from "react";
 
-export function FAQSection2() {
-  const faqData = [
+export const faqData = [
     {
       category: "General",
       questions: [
@@ -58,6 +58,46 @@ export function FAQSection2() {
       ]
     }
   ];
+
+export function FAQSection2() {
+  useEffect(() => {
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai'
+    
+    const faqPageJsonLd = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: faqData.flatMap(section => 
+        section.questions.map(q => ({
+          '@type': 'Question',
+          name: q.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: q.answer,
+          },
+        }))
+      ),
+    }
+
+    // Remove existing FAQ schema if present
+    const existingScript = document.getElementById('faq-schema')
+    if (existingScript) {
+      existingScript.remove()
+    }
+
+    // Add FAQ schema
+    const script = document.createElement('script')
+    script.id = 'faq-schema'
+    script.type = 'application/ld+json'
+    script.text = JSON.stringify(faqPageJsonLd)
+    document.head.appendChild(script)
+
+    return () => {
+      const scriptToRemove = document.getElementById('faq-schema')
+      if (scriptToRemove) {
+        scriptToRemove.remove()
+      }
+    }
+  }, [])
 
   return (
     <section className="py-20 bg-background">

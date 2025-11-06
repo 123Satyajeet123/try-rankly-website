@@ -1,0 +1,50 @@
+# llms.txt - Guide for LLMs crawling this website
+
+# Summary
+Rankly is an Answer Engine Optimization (AEO) platform that helps businesses track and improve their visibility in AI-powered search engines like ChatGPT, Perplexity, Claude, Gemini, and more. We provide analytics and insights to help brands understand how they're cited and represented in AI-generated answers.
+
+# Key Sections
+
+## Homepage (/)
+The main landing page introduces Rankly's core value proposition: tracking brand performance inside AI answers. Features include Answer Engine Analytics, Traffic Analytics, and Actionables.
+
+## Features
+- /features/answer-engine-analytics - Track how your brand performs inside AI answers across multiple platforms
+- /features/traffic-analytics - See how AI mentions turn into conversions and track traffic sources
+- /features/actionables - Get specific recommendations and strategies to improve your AEO performance
+
+## About (/about)
+Learn about Rankly's mission to make Answer Engine Optimization measurable and actionable. Discover how we're transforming AI visibility tracking.
+
+## Blog & Resources
+- /blogs/what-is-aeo - Comprehensive guide explaining Answer Engine Optimization and why it matters
+- /blogs - Collection of articles about AEO, generative AI, and digital visibility
+- /resources - Educational resources and guides for AEO best practices
+
+# Main Topics Covered
+- Answer Engine Optimization (AEO)
+- Generative Engine Optimization (GEO)
+- AI visibility tracking
+- LLM analytics
+- Citation tracking
+- AI brand mentions
+- Traffic analytics from AI sources
+- Content optimization for AI engines
+
+# Important Links
+- Homepage: https://rankly.ai/
+- About: https://rankly.ai/about
+- Features: https://rankly.ai/features/answer-engine-analytics
+- Blog: https://rankly.ai/blogs
+- Resources: https://rankly.ai/resources
+
+# Contact
+For questions or support, visit https://cal.com/sj-rankly/30min
+
+# Markdown Format
+This website provides markdown versions of pages for LLM-friendly content access:
+- API Endpoint: https://rankly.ai/api/markdown?path={page_path}
+- Example: https://rankly.ai/api/markdown?path=/blogs/what-is-aeo
+- Available paths: /, /blogs/what-is-aeo, /about
+- Content-Type: text/markdown
+

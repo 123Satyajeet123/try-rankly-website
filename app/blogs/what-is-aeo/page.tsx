@@ -1,16 +1,11 @@
-<<<<<<< HEAD
 import type { Metadata } from "next"
-=======
-"use client"
-
->>>>>>> 20a8ff5 (Enhance blog posts with anchor links, improve manifesto text contrast, and update blog content)
 import { SiteHeader } from "@/components/site-header"
 import { RanklyFooter } from "@/components/rankly-footer"
 import { FlickeringGrid } from "@/components/ui/flickering-grid"
 import { ProductDemoSection } from "@/components/product-demo-section"
 import { FAQSection2 } from "@/components/ui/faq-section-2"
-import { ThemeToggle } from "@/components/theme-toggle"
-import { Link as LinkIcon } from "lucide-react"
+import { MarkdownButton } from "@/components/markdown-button"
+import { LinkIcon } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "What is AEO? Why Generative Engine Optimization is the New SEO",
@@ -31,8 +26,42 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPostPage() {
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai'
+  
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: 'What is AEO? Why Generative Engine Optimization is the New SEO',
+    description: 'Understand how Answer Engine Optimization is reshaping digital visibility. From citations to sentiment, discover why ranking in AI Answer Engines matters more than ever.',
+    image: `${baseUrl}/images/rankly-dashboard-final.png`,
+    datePublished: '2024-12-15',
+    dateModified: '2024-12-15',
+    author: {
+      '@type': 'Organization',
+      name: 'Rankly',
+      url: baseUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Rankly',
+      url: baseUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${baseUrl}/favicon.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${baseUrl}/blogs/what-is-aeo`,
+    },
+  }
+
   return (
     <main className="min-h-dvh bg-background text-foreground">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <SiteHeader />
 
       <div className="mx-auto max-w-7xl relative px-6 md:px-8">
@@ -40,9 +69,17 @@ export default function BlogPostPage() {
           <article className="max-w-[680px] mx-auto">
               {/* Header Section */}
               <header className="mb-4">
-                <h1 className="text-[40px] md:text-[44px] font-semibold leading-tight tracking-[-0.02em] mb-4 text-foreground">
-                  What is AEO? Why Generative Engine Optimization is the New SEO
-                </h1>
+                <div className="flex items-start justify-between gap-4 mb-4">
+                  <h1 className="text-[40px] md:text-[44px] font-semibold leading-tight tracking-[-0.02em] text-foreground flex-1">
+                    What is AEO? Why Generative Engine Optimization is the New SEO
+                  </h1>
+                  <MarkdownButton 
+                    path="/blogs/what-is-aeo"
+                    variant="outline"
+                    size="sm"
+                    className="shrink-0 mt-2"
+                  />
+                </div>
                 
                 <p className="text-[15.5px] md:text-base leading-[1.7] mt-4 mb-4 text-muted-foreground">
                   Understand how Answer Engine Optimization is reshaping digital visibility. From citations to
