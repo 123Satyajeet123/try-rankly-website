@@ -31,7 +31,7 @@ Get specific recommendations and strategies to improve your AEO performance. Tra
 
 Rankly is an Answer Engine Optimization (AEO) platform that helps businesses increase their visibility in AI-powered search engines. We help you build authority through third-party sources that AI engines trust and cite.
 
-Visit https://rankly.ai to learn more.
+Visit https://tryrankly.com to learn more.
 `,
 
   '/blogs/what-is-aeo': `# What is AEO? Why Generative Engine Optimization is the New SEO
@@ -150,7 +150,7 @@ Rankly provides analytics and insights to help brands understand how they're cit
 - Traffic attribution from AI sources
 - Actionable recommendations for improvement
 
-Visit https://rankly.ai to learn more.
+Visit https://tryrankly.com to learn more.
 `,
 };
 

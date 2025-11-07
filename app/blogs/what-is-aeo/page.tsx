@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 }
 
 export default function BlogPostPage() {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tryrankly.com'
   
   const articleJsonLd = {
     '@context': 'https://schema.org',

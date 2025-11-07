@@ -28,5 +28,5 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://rankly.ai/sitemap.xml
+Sitemap: https://tryrankly.com/sitemap.xml
 

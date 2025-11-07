@@ -27,8 +27,20 @@ const quintessential = Quintessential({
   display: "swap",
 })
 
+// Get the actual site URL - IMPORTANT: Set NEXT_PUBLIC_SITE_URL environment variable to your actual domain
+// This prevents platforms like Hacker News/WhatsApp from showing the wrong domain
+const getSiteUrl = () => {
+  // Priority: 1. Environment variable, 2. Try to detect from common domains, 3. Fallback
+  if (process.env.NEXT_PUBLIC_SITE_URL) {
+    return process.env.NEXT_PUBLIC_SITE_URL
+  }
+  // If no env var is set, default to tryrankly.com (update this to your actual domain)
+  // IMPORTANT: Set NEXT_PUBLIC_SITE_URL in your .env file to match your actual domain
+  return 'https://tryrankly.com'
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai'),
+  metadataBase: new URL(getSiteUrl()),
   title: {
     default: "Rankly - Answer Engine Analytics & AI Visibility Tracking",
     template: "%s | Rankly"
@@ -105,7 +117,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai'
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tryrankly.com'
   
   const softwareApplicationJsonLd = {
     '@context': 'https://schema.org',

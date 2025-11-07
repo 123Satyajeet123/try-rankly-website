@@ -61,7 +61,7 @@ export const faqData = [
 
 export function FAQSection2() {
   useEffect(() => {
-    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://rankly.ai'
+    const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://tryrankly.com'
     
     const faqPageJsonLd = {
       '@context': 'https://schema.org',
