@@ -28,9 +28,28 @@ const quintessential = Quintessential({
 })
 
 export const metadata: Metadata = {
-  title: "v0 App",
-  description: "Created with v0",
+  title: "Rankly - Answer Engine Analytics & AI Visibility",
+  description: "Turn AI mentions into conversions",
   generator: "v0.app",
+  openGraph: {
+    title: "Rankly - Answer Engine Analytics & AI Visibility",
+    description: "Turn AI mentions into conversions",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Rankly - Answer Engine Analytics & AI Visibility",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rankly - Answer Engine Analytics & AI Visibility",
+    description: "Turn AI mentions into conversions",
+    images: ["/og-image.png"],
+  },
 }
 
 export default function RootLayout({
